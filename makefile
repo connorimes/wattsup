@@ -13,6 +13,14 @@ test_library: test_library.c libwattsup.so
 install: all
 	install -m 0555 wattsup /usr/local/bin/
 	install -m 0444 libwattsup.so /usr/local/lib/
+	mkdir -p /usr/local/include/wattsup/
+	install -D -m 0644 wattsup_common.h /usr/local/include/wattsup/
+	install -D -m 0644 util.h /usr/local/include/wattsup/
+
+uninstall:
+	rm -f /usr/local/bin/wattsup
+	rm -f /usr/local/lib/libwattsup.so
+	rm -rf /usr/local/include/wattsup/
 
 clean:
 	rm -f *~ $(targets)

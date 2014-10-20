@@ -414,7 +414,7 @@ static int parse_packet(struct wu_packet * p)
 }
 
 
-static int wu_read(int fd, struct wu_packet * p)
+int wu_read(int fd, struct wu_packet * p)
 {
 	fd_set read_fd;
 	struct timeval tv;
@@ -1003,7 +1003,7 @@ static int wu_store_user(int fd)
 }
 
 
-static void enable_field(char * name)
+void enable_field(char * name)
 {
 	int i;
 
